@@ -1,0 +1,168 @@
+/* Start Variables */
+:root {
+    --clr-primary: hsl(259, 100%, 65%);
+    --clr-error: hsla(0, 100%, 67%,0.8);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-body-bg: hsl(0, 0%, 94%);
+    --clr-secondry-text: hsl(0, 0%, 86%);
+    --clr-screen-bg: hsl(0, 1%, 44%);
+    --clr-main-text: hsl(0, 0%, 8%);
+
+    --fs-normal: clamp(1rem, 2.5vw, 1.125rem);
+    --fs-heading: clamp(2rem, 3.5vw, 2.5rem);
+    --fs-sub-heading: clamp(1.375rem, 3vw, 1.5rem);
+    --fw-normal: 400;
+    --fw-medium: 700;
+    --fw-bold: 800;
+
+    --main-padding: 0.5rem;
+    --main-margin:0.5rem;
+
+    --border-radius:0.25rem ;
+
+    --main-transtion: 0.3s
+}
+
+/* End Variables */
+
+
+/* Start Global Rules */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size: 32px;
+}
+@media only screen and (max-width:767px){
+    html{
+        font-size: 20px;
+    }
+}
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: var(--fw-normal);
+    font-size: var(--fs-normal);
+    background-color: var(--clr-body-bg);
+    min-height: 100vh;
+    /* display: grid;
+    place-items: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* end Global Rules */
+.container{
+    padding: var(--main-padding);
+    background-color: var(--clr-white);
+    width: 100%;
+
+}
+@media only screen and (min-width:768px){
+    .container{
+        width: 80%;
+    }
+}
+.container .input {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: var(--main-margin);
+}
+.container .input div{
+    flex: 1;
+    width: 25%;
+}
+.container .input div label{
+    display: block;
+    font-size: 0.5rem;
+    font-weight: var(--fw-medium);
+    color: var(--clr-screen-bg);
+    margin-bottom: var(--main-margin);
+    letter-spacing: 0.1rem;
+}
+.container .input div input{
+    max-width: 100%;
+    color: var(--clr-primary);
+    padding: var(--main-padding) calc(var(--main-padding) / 2) ;
+    border: 1px solid var(--clr-secondry-text);
+    border-radius: var(--border-radius);
+    transition: var(--main-transtion);
+    -webkit-transition: var(--main-transtion);
+    -moz-transition: var(--main-transtion);
+    -ms-transition: var(--main-transtion);
+    -o-transition: var(--main-transtion);
+    -webkit-border-radius: var(--border-radius);
+    -moz-border-radius: var(--border-radius);
+    -ms-border-radius: var(--border-radius);
+    -o-border-radius: var(--border-radius);
+}
+.container .input div input::placeholder{
+    color: var(--clr-screen-bg);
+    font-weight: var(--);
+}
+.container .input div input:hover,
+.container .input div input:focus{
+    outline: none;
+    border: 1px solid var(--clr-primary);
+}
+
+.container .input div .error-msg{
+    display: none;
+    font-size: 0.5rem;
+    font-weight: var(--fs-normal);
+    font-style: italic;
+    margin-top: 0.2rem;
+}
+.container .input div.error label
+, .container .input div.error .error-msg{
+    color: var(--clr-error);
+    display: block;
+}
+
+.container .input div.error input{
+    border-color: var(--clr-error);
+}
+
+.container section:nth-child(2){
+    display: flex;
+    justify-content: end;
+    margin-bottom: var(--main-margin);
+}
+@media only screen and (max-width:767px){
+    .container section:nth-child(2){
+        justify-content: center;
+    }
+}
+ .container section:nth-child(2) button{
+    background-color: var(--clr-primary);
+    padding: var(--main-padding);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: var(--main-transtion);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-transition: var(--main-transtion);
+    -moz-transition: var(--main-transtion);
+    -ms-transition: var(--main-transtion);
+    -o-transition: var(--main-transtion);
+}
+.container section:nth-child(2) button:hover{
+    background-color: var(--clr-main-text);
+}
+
+.container section:last-child p{
+    font-size: var(--fs-heading);
+    font-weight: var(--fw-bold);
+    font-style: italic;
+}
+
+.container section:last-child p span{
+    color: var(--clr-primary);
+}
